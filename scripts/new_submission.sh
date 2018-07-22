@@ -10,4 +10,6 @@ dir=$(submission_dir "$username")
 mkdir "$dir"
 
 say "working directory: $dir"
-cd "$dir"
+
+echo $username > "$dir/username.txt"
+cp -R "$ROOT/template/" "$dir"
