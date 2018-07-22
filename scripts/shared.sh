@@ -18,5 +18,5 @@ function submission_dir() {
 }
 
 function tar_file() {
-  echo "$ROOT/submissions/${encrypt_string "$1"}"
+  echo "$ROOT/submissions/$(encrypt_string "$1")"
 }
