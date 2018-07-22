@@ -2,7 +2,7 @@
 
 source "$(dirname $BASH_SOURCE)/shared.sh"
 
-./package_submission.sh
+source "$ROOT/scripts/package_submission.sh"
 
 git checkout $id
 git add "$file.enc"
