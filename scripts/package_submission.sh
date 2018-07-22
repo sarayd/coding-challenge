@@ -9,6 +9,6 @@ file=$(tar_file $id)
 
 echo $username > "$ROOT/.id"
 
-rm $file $file.enc
+rm -f $file $file.enc
 tar -zcf $file $dir
 encrypt_file $file

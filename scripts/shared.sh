@@ -18,5 +18,5 @@ function submission_dir() {
 }
 
 function tar_file() {
-  echo "$ROOT/submissions/$1"
+  echo "$ROOT/submissions/$1.tar.gz"
 }
