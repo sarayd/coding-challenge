@@ -9,11 +9,11 @@ The four categories we're testing for are:
 3. Architecture
 4. Web
 
-Additionally, we will ask you to submit a code sample. This should be the piece of code that you are most proud of. You could be proud of this code because of how elegant, efficient, or otherwise beautiful it is. Please include with it a brief description of what the code does, and why you're so proud of it.
+Additionally, we will ask you to submit a code sample. This should be the piece of code that you are most proud of. You could be proud of this code because of how elegant, efficient, or otherwise beautiful it is.
 
 ## Environment
 
-The Code Quality question must be completed in Ruby (since this is the language the majority of our backend systems are currently written in). If you're unfamiliar with Ruby, check out this [migration guide](https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/).
+The Code Quality question must be completed in Ruby (since this is the language the majority of our backend systems are currently written in). If you're unfamiliar with Ruby, check out this [migration guide](https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/). Hopefully you don't feel too hindered by this restriction - feel free to include a note if you found it particularly annoying, or to let us know that you're strongest with another language.
 
 The SQL question is run against an up-to-date Postgres instance.
 
@@ -41,7 +41,7 @@ Design a class that allows for rate-limiting of arbitrary code blocks. Initially
 
 If you have time, feel free to add creative extensions, such as thread-safety, per-instance default options, shared remote state in a database, alternative rate-limiting schemes, or improving runtime/memory performance. This is strictly optional.
 
-The class should be called `RateLimiter` have a single public method, `limit`. The initializer should accept a hash of options that include at least `throws`, and `limit` should take a `name`, `threshold`, and `period`. This is demonstrated below.
+The class should be called `RateLimiter`, and it should have a single public method, `limit`. The initializer should accept a hash of options that include at least `throws`, and `limit` should take a `name`, `threshold`, and `period`. This is demonstrated below.
 
 If `throws` is `true`, the block should raise a `RateLimiter::Limited` error when the number of calls exceeds the `threshold` for a given `period`. If `throws` is `false`, the block should simply not execute, instead of throwing an error.
 
@@ -102,13 +102,14 @@ Write a single query ([CTE](https://www.postgresql.org/docs/9.1/static/queries-w
 
 If it helps, the formal definition of the set `R` of returned rows are as follows. Here, `U` is the set of all records in the database, and `M_r` is the set of records that have the same `medium` and `identifier` as a record `r`.
 
+![formal definition of R](images/sql.png)
+
+
 ```tex
 M_r := \{r' \in U \setminus \{r\} : r'.\text{medium} = r.\text{medium} \land r'.\text{source} = r.\text{source}\}
 
 R := \{r \in U : r.\text{status} = \text{``pending''} \land (\nexists r' \in M_r)\left[r'.\text{created\_at} < r.\text{created\_at} \lor r'.\text{status} = \text{``inflight''}\right]\}
 ```
-
-![formal definition of R](images/sql.png)
 
 ### Architecture
 
@@ -137,3 +138,7 @@ This one is fun! Please include your solution to the following.
 > What is the most creative way you can get a circle to appear on the screen of a web browser?
 
 Please include a run script (`run.sh`) which we can run to test your solution. This script should do any necessary building and compilation, and print either an address or a file we can open in a web browser running on the same machine.
+
+### Code Sample
+
+Please include with it a brief description of what your code does, and why you're so proud of it.
