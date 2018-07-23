@@ -1,27 +1,25 @@
 # Karuna Coding Challenge
 
-This challenge consists of four questions, each designed to test a different skillset which we consider crucial to being part of our early-stage team. This is not meant to be a whiteboard exercise or something to test your memorization skills. We want to see how you problem-solve as an engineer. Feel free to use your standard environment, tools, resources, etc. You can Google anything you'd like, use public libraries, and do all thing things you'd normally do. We only request that your submission be self-contained (use standard mechansims such as a `requirements.txt` or `Gemfile` to pull in external dependencies if needed), and that you don't get anyone else to help you (no asking friends for tips and write all your own code).
+This challenge consists of four questions, each designed to test a different skillset which we consider crucial to being part of our early-stage team. Each question should take at most an hour. This is not meant to be a whiteboard exercise or something to test your memorization skills. We want to see how you problem-solve as an engineer. Feel free to use your standard environment, tools, resources, etc. You can Google anything you'd like, use public libraries, and do all thing things you'd normally do. We only request that your submission be self-contained (use standard mechanisms such as a `package.json` or `Gemfile` to pull in external dependencies if needed), and that you don't get anyone else to help you (no asking friends for tips and write all your own code).
 
 The four categories we're testing for are:
 
 1. Code Quality
 2. SQL
-3. Systems Architechture
+3. Architecture
 4. Web
 
 Additionally, we will ask you to submit a code sample. This should be the piece of code that you are most proud of. You could be proud of this code because of how elegant, efficient, or otherwise beautiful it is. Please include with it a brief description of what the code does, and why you're so proud of it.
 
 ## Environment
 
-Currently, this challenge supports code using the following languages and depency managers:
-
-1. Python3 (pip, `requirements.txt`)
-2. Ruby (bundler, `Gemfile`)
-3. Javascript (yarn, `package.json`)
-
-Let us know if you'd like to use a different language for any of the questions, and we'll make it happen!
+The Code Quality question must be completed in Ruby (since this is the language the majority of our backend systems are currently written in). If you're unfamiliar with Ruby, check out this [migration guide](https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/).
 
 The SQL question is run against an up-to-date Postgres instance.
+
+The Architecture is completely open-ended.
+
+The Web question can use any sane frontend/backend setup you wish (including a simple static HTML file). We recommend keeping it simple and not using a module bundler. We will run your code in a modern version of Chrome, unless you tell us to do something else.
 
 ## Submission
 
@@ -39,3 +37,94 @@ If you need up update your submission, please use [`amend_submission.sh`](script
 
 ### Code Quality
 
+Design a class that allows for rate-limiting of arbitrary code blocks. Initially, assume there is only one thread using an instance of the class at a time, and that any state can be stored internally and locally. You are free to choose any sane rate-limiting algorithm. Please include a test file (or modify the [existing one](template/code_quality/test_rate_limiter.rb)) to demonstrate the efficacy of your class. Do not worry about writing particularly performant code; the focus should be on correctness and code quality.
+
+If you have time, feel free to add creative extensions, such as thread-safety, per-instance default options, shared remote state in a database, alternative rate-limiting schemes, or improving runtime/memory performance. This is strictly optional.
+
+The class should be called `RateLimiter` have a single public method, `limit`. The initializer should accept a hash of options that include at least `throws`, and `limit` should take a `name`, `threshold`, and `period`. This is demonstrated below.
+
+If `throws` is `true`, the block should raise a `RateLimiter::Limited` error when the number of calls exceeds the `threshold` for a given `period`. If `throws` is `false`, the block should simply not execute, instead of throwing an error.
+
+You may assume that there is a maximum to the length of any `period` of `10.minutes`. Please document this or any other assumptions clearly.
+
+```ruby
+class RateLimitTester
+  def initialize
+    @limiter = RateLimiter.new(throws: true)
+  end
+
+  def expensive_foo!
+    limiter.limit(:expensive_foo, threshold: 3, period: 1.minute) do
+      sleep 1
+    end
+  end
+end
+
+tester = RateLimitTester.new
+3.times { tester.expensive_foo! }
+tester.expensive_foo! # should raise RateLimiter::Limited
+```
+
+### SQL
+
+We are attempting to build a service which receives messages to be sent, and queues them locally so that they can be delivered to the recipient one at a time. Messages have a `medium` (such as "SMS") and an `identifier` (such as "+12345678900"), which together uniquely identify a recipient. The external service we use to send messages alerts us when a message has been delivered, so that the next message for a recipient (if any) can be sent out.
+
+We wish to write a query that gives us the messages which are eligible to be sent at the given moment. It should preserve the ordering of messages, and ensure a message is only sent after the previous message for a recipient is delivered. This means we want to return, per recipient, the _earliest_ pending message, assuming there are no messages currently in-flight for that recipient. If there are any messages in-flight for that recipient, we want to return nothing.
+
+Assume you have a table created with the following schema.
+
+```sql
+CREATE TABLE messages (
+  id integer PRIMARY KEY,
+  medium character varying NOT NULL,
+  identifier character varying NOT NULL,
+  status integer NOT NULL,
+  body text NOT NULL,
+  created_at timestamp without time zone NOT NULL
+);
+```
+
+`status` is an enum, with the following value map.
+
+```ruby
+{
+  0: :pending,
+  1: :inflight,
+  2: :succeeded,
+}
+```
+
+Write a single query ([CTE](https://www.postgresql.org/docs/9.1/static/queries-with.html)s are allowed) which returns all the rows that satisfy the following:
+
+- `status` is `pending`
+- there are no `pending` rows with the same `(medium, identifier)` that have an earlier `created_at`
+- There are no rows with the same `(medium, identifier)` that are `inflight`
+
+
+### Architecture
+
+We would like to design a system (or series of systems) which allows for our care coordinators to have a unified messaging platform with which to message patients. The requirements of the system are:
+
+1. Patients can message Karuna from various different mediums (Facebook Messenger, SMS, etc.)
+2. The same patient can contact us on different mediums at different times, and receive responses on the last medium they used
+3. Messages from patients can get routed to the correct coordinator, based on a set of rules
+4. Coordinators have a UI which shows all their routed messages in one place
+5. Coordinators can respond to messages without worrying about which medium will be used
+6. Coordinators can "hand off" a patient to another coordinator
+7. Audio and video interactions are recorded and transcribed
+8. Both incoming and outgoing messages are delivered in-order and exactly-once
+9. The external systems for delivering messages can be easily changed
+10. Various metrics and thresholds (such as the maximum time a patient waits for a response) can be reported and alerted on
+
+This is intentionally a very open-ended question. There are hundreds of different aspects you can think through, from the data models, to the interactions between microservices (if indeed there are any), to the external APIs used for delivery. We are not asking you to cover every possible question - just the ones you think are most important.
+
+Your deliverable has two pieces. The first is a defining set of questions: what are the most important aspects of this system to think through. We will use this to learn how you approach ambiguity, and how you bring structure to new problems. The second piece is to answer all your own questions, to whatever degree of thoroughness you deem necessary. Please do not spend more than an hour on this question. You are free to make this question as technical or visual as you wish. We're not looking for the "right" answer, just an example of how you form and communicate plans.
+
+
+### Web
+
+This one is fun! Please include your solution to the following.
+
+> What is the most creative way you can get a circle to appear on the screen of a web browser?
+
+Please include a run script (`run.sh`) which we can run to test your solution. This script should do any necessary building and compilation, and print either an address or a file we can open in a web browser running on the same machine.
