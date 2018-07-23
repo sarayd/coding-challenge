@@ -2,7 +2,7 @@
 
 source "$(dirname $BASH_SOURCE)/shared.sh"
 
-if [ ! -f "$ROOT/.id"]; then
+if [ ! -f "$ROOT/.id" ]; then
   say "What is your Submission ID?"
   read id
   echo $id > "$ROOT/.id"
