@@ -33,7 +33,7 @@ Please use the following procedure to submit your response to this challenge. Wh
 4. Run [`finalize_submission.sh`](scripts/finalize_submission.sh) to encrypt your submission, commit it, and push it to a new branch
 5. Email us and let us know you have submitted!
 
-If you need up update your submission, please use [`amend_submission.sh`](scripts/amend_submission.sh).
+If you need up update your submission, please use [`amend_submission.sh`](scripts/amend_submission.sh). If it doesn't exist, you'll need to first create a `.id` file with your Submission ID.
 
 ## Questions
 

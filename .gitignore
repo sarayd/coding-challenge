@@ -3,4 +3,6 @@
 private.pem
 .username
 .id
+
 submissions/*.unencrypted
+submissions/*.tar.gz
