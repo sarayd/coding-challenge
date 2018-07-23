@@ -54,7 +54,7 @@ class RateLimitTester
   end
 
   def expensive_foo!
-    limiter.limit(:expensive_foo, threshold: 3, period: 1.minute) do
+    @limiter.limit(:expensive_foo, threshold: 3, period: 1.minute) do
       sleep 1
     end
   end
@@ -94,12 +94,21 @@ CREATE TABLE messages (
 }
 ```
 
-Write a single query ([CTE](https://www.postgresql.org/docs/9.1/static/queries-with.html)s are allowed) which returns all the rows that satisfy the following:
+Write a single query ([CTE](https://www.postgresql.org/docs/9.1/static/queries-with.html)s are allowed) which returns all rows `r` that satisfy the following:
 
-- `status` is `pending`
-- there are no `pending` rows with the same `(medium, identifier)` that have an earlier `created_at`
-- There are no rows with the same `(medium, identifier)` that are `inflight`
+- `r.status` is `pending`
+- there are no rows with the same `(medium, identifier)` as `r` that are also `pending` but have an earlier `created_at` (this ensures the returned row is the earliest pending message for the recipient)
+- there are no rows with the same `(medium, identifier)` as `r` that are `inflight`
 
+If it helps, the formal definition of the set `R` of returned rows are as follows. Here, `U` is the set of all records in the database, and `M_r` is the set of records that have the same `medium` and `identifier` as a record `r`.
+
+```tex
+M_r := \{r' \in U \setminus \{r\} : r'.\text{medium} = r.\text{medium} \land r'.\text{source} = r.\text{source}\}
+
+R := \{r \in U : r.\text{status} = \text{``pending''} \land (\nexists r' \in M_r)\left[r'.\text{created\_at} < r.\text{created\_at} \lor r'.\text{status} = \text{``inflight''}\right]\}
+```
+
+![formal definition of R](images/sql.png)
 
 ### Architecture
 
