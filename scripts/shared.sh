@@ -23,7 +23,7 @@ function encrypt_file() {
 }
 
 function decrypt_file() {
-  openssl rsautl -decrypt -inkey "$ROOT/keys/private.pem" -in "$ROOT/keys/$1.key.enc" -out "$ROOT/keys/$1.key.unencrypted"
+  openssl rsautl -decrypt -inkey "$ROOT/keys/private.pem" -passin file:"$ROOT/keys/.password" -in "$ROOT/keys/$1.key.enc" -out "$ROOT/keys/$1.key.unencrypted"
   openssl aes-256-cbc -salt -a -d -in $2.enc -out $2 -pass file:"$ROOT/keys/$1.key.unencrypted"
 }
 
