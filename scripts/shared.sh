@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -Eeuo pipefail
 
 ROOT=$(dirname $(dirname $BASH_SOURCE))
 
@@ -11,7 +11,7 @@ function say() {
 }
 
 function ensure_key() {
-  if [ -f "$ROOT/keys/$1.key.unencrypted" ]; then
+  if [ ! -f "$ROOT/keys/$1.key.unencrypted" ]; then
     openssl rand -base64 32 > "$ROOT/keys/$1.key.unencrypted"
     openssl rsautl -encrypt -inkey "$ROOT/keys/public.pem" -pubin -in "$ROOT/keys/$1.key.unencrypted" -out "$ROOT/keys/$1.key.enc"
   fi
