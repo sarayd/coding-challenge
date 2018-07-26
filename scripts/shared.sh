@@ -10,12 +10,21 @@ function say() {
   echo "${BOLD}$1${NORMAL}"
 }
 
+function ensure_key() {
+  if [ -f "$ROOT/keys/$1.key.unencrypted" ]; then
+    openssl rand -base64 32 > "$ROOT/keys/$1.key.unencrypted"
+    openssl rsautl -encrypt -inkey "$ROOT/keys/public.pem" -pubin -in "$ROOT/keys/$1.key.unencrypted" -out "$ROOT/keys/$1.key.enc"
+  fi
+}
+
 function encrypt_file() {
-  openssl aes-256-cbc -salt -a -e -in $1 -out $1.enc -pass env:ENC_PASSWORD
+  ensure_key $1
+  openssl aes-256-cbc -salt -a -e -in $2 -out $2.enc -pass file:"$ROOT/keys/$1.key.unencrypted"
 }
 
 function decrypt_file() {
-  openssl aes-256-cbc -salt -a -d -in $1.enc -out $1 -pass env:ENC_PASSWORD
+  openssl rsautl -decrypt -inkey "$ROOT/keys/private.pem" -in "$ROOT/keys/$1.key.enc" -out "$ROOT/keys/$1.key.unencrypted"
+  openssl aes-256-cbc -salt -a -d -in $2.enc -out $2 -pass file:"$ROOT/keys/$1.key.unencrypted"
 }
 
 function submission_dir() {

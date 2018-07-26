@@ -18,5 +18,5 @@ file=$(tar_file $id)
 
 rm -f $file $file.enc
 tar -zcf $file $dir
-encrypt_file $file
+encrypt_file $id $file
 rm $file

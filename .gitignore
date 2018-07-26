@@ -1,6 +1,8 @@
 .DS_Store
 
-private.pem
+keys/private.pem
+keys/.password
+keys/*.unencrypted
 .username
 .id
 

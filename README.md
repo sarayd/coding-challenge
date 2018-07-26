@@ -111,7 +111,9 @@ M_r := \{r' \in U \setminus \{r\} : r'.\text{medium} = r.\text{medium} \land r'.
 R := \{r \in U : r.\text{status} = \text{``pending''} \land (\nexists r' \in M_r)\left[r'.\text{created\_at} < r.\text{created\_at} \lor r'.\text{status} = \text{``inflight''}\right]\}
 ```
 
-### Architecture
+### Messaging Platform
+
+#### Architecture
 
 We would like to design a system (or series of systems) which allows for our care coordinators to have a unified messaging platform with which to message patients. The requirements of the system are:
 
@@ -130,14 +132,34 @@ This is intentionally a very open-ended question. There are hundreds of differen
 
 Your deliverable has two pieces. The first is a defining set of questions: what are the most important aspects of this system to think through? We will use this to learn how you approach ambiguity, and how you bring structure to new problems. The second piece is to answer all your own questions, to whatever degree of thoroughness you deem necessary. Please do not spend more than an hour on this question. You are free to make this question as technical or visual as you wish. We're not looking for the "right" answer, just an example of how you form and communicate plans.
 
+#### Frontend
 
-### Web
+// build a react app that displays conversations, marks them as read, shows messages, allows sending, and shows profile. mock the data locally, fetch the message values from API provided (deterministic based on name)
+
+#### Design
+
+// mockups for the frontend
+
+
+### Creative Web
 
 This one is fun! Please include your solution to the following.
 
 > What is the most creative way you can get a circle to appear on the screen of a web browser?
 
 Please include a run script (`run.sh`) which we can run to test your solution. This script should do any necessary building and compilation, and print either an address or a file we can open in a web browser running on the same machine.
+
+// list all of them
+
+### `bf`
+
+#### Backend
+
+// write a bf interpreter as a class with an API (ruby). if you're full-stack, make it an API and do the next one too
+
+#### Execution Visualizer
+
+// web app that gives input box for bf script, and api that you send it to, get a token, and then can increment one step at a time and get the tapes. visualize the tapes and how they change
 
 ### Code Sample
 

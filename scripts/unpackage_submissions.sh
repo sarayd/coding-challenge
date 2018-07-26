@@ -5,9 +5,9 @@ source "$(dirname $BASH_SOURCE)/shared.sh"
 function unpackage() {
   parent=$(dirname $1)
   file=$(basename $1 .enc)
-  dir=$(basename $1 .tar.gz.enc)
+  id=$(basename $1 .tar.gz.enc)
 
-  decrypt_file "$parent/$file"
+  decrypt_file $id "$parent/$file"
   tar -xzf "$parent/$file"
 }
 
