@@ -1,6 +1,6 @@
 # Karuna Coding Challenge
 
-This challenge consists of many questions, each designed to test a different skillset which we consider crucial to being part of our early-stage team. Each question should take at most an hour. This is not meant to be a whiteboard exercise or something to test your memorization skills. We want to see how you problem-solve as an engineer. Feel free to use your standard environment, tools, resources, etc. You can Google anything you'd like, use public libraries, and do all thing things you'd normally do. We only request that your submission be self-contained (use standard mechanisms such as a `package.json` or `Gemfile` to pull in external dependencies if needed), and that you don't get anyone else to help you (no asking friends for tips and write all your own code).
+This challenge consists of many questions, each designed to test a different skillset which we consider crucial to being part of our early-stage team. Each question should take at most an hour. This is not meant to be a whiteboard exercise or something to test your memorization skills. We want to see how you problem-solve as an engineer. Feel free to use your standard environment, tools, resources, etc. You can Google anything you'd like, use public libraries, and do all thing things you'd normally do. We only request that your submission be self-contained (use standard mechanisms such as a `package.json` or `Gemfile` to pull in external dependencies if needed), and that you don't get anyone else to help you.
 
 Please select 3 of the below challenges, and complete them.
 
@@ -41,7 +41,7 @@ This coding challenge is very much in beta! Feel free to email us with improveme
 
 ### Rate Limiting
 
-Design a class that allows for rate-limiting of arbitrary code blocks. Initially, assume there is only one thread using an instance of the class at a time, and that any state can be stored internally and locally. You are free to choose any sane rate-limiting algorithm. Please include a test file (or modify the [existing one](template/code_quality/test_rate_limiter.rb)) to demonstrate the efficacy of your class. Do not worry about writing particularly performant code; the focus should be on correctness and code quality.
+Design a class that allows for rate-limiting of arbitrary code blocks. Initially, assume there is only one thread using an instance of the class at a time, and that any state can be stored internally and locally. You are free to choose any sane rate-limiting algorithm. Please include a test file (or modify the [existing one](template/code_quality/test_rate_limiter.rb)) to demonstrate the correctness of your class. Do not worry about writing particularly performant code; the focus should be on correctness and code quality.
 
 If you have time, feel free to add creative extensions, such as thread-safety, per-instance default options, shared remote state in a database, alternative rate-limiting schemes, or improving runtime/memory performance. This is strictly optional.
 
@@ -138,7 +138,7 @@ Your deliverable has two pieces. The first is a defining set of questions: what 
 
 We wish to build a client for the platform described above.
 
-Build a functional, standalone React app that displays a set of conversations, each with a series of messages between two parties. Assume the person viewing the app is one of the participants in each conversation. The basic requirements are to be able to view the list of conversations with others, search for a given conversation by the other person's name (exact match is sufficient), view the messages of a selected conversation in-order, compose a new message (plain text is sufficient), and "send" a new message (storing the message in-memory and having it appear in the interface is sufficient).
+Build a functional, standalone React app that displays a set of conversations, each with a series of messages between two parties. Assume the person viewing the app is one of the participants in each conversation. The basic requirements are to be able to view the list of conversations with others, search for a given conversation by the other person's name (exact match is sufficient), view the messages of a selected conversation in-order, compose a new message (plain text is sufficient), and "send" a new message (storing the message in-memory and having it appear in the interface is sufficient). Supporting multiple users (care managers) is out of scope.
 
 While you are free to store outgoing messages in-memory, please use the below API endpoints to fetch the set of existing conversations and messages. Each conversation has an unread count, which you must display somewhere in the interface. Conversations should be displayed in descending order of their last message's timestamp.
 
