@@ -19,10 +19,10 @@ The React questions can use any sane build setup you wish (including a simple st
 Please use the following procedure to submit your response to this challenge. While the repository is shared, your submission will be encrypted, and your commit will be anonymous.
 
 1. Clone this repo
-2. Run [`new_submission.sh`](scripts/new_submission.sh) to generate a directory for your submission
+2. Run [`scripts/new_submission.sh`](scripts/new_submission.sh) to generate a directory for your submission
 3. Place your challenge submissions for each question in the relevant sub-directory
 4. Add your code sample
-5. Run [`finalize_submission.sh`](scripts/finalize_submission.sh) to encrypt your submission, commit it, and push it to a new branch
+5. Run [`scripts/finalize_submission.sh`](scripts/finalize_submission.sh) to encrypt your submission, commit it, and push it to a new branch
 6. Email us and let us know you have submitted!
 
 If you need up update your submission, please use [`amend_submission.sh`](scripts/amend_submission.sh).
