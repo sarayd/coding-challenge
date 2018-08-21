@@ -45,7 +45,7 @@ Design a class that allows for rate-limiting of arbitrary code blocks. Initially
 
 If you have time, feel free to add creative extensions, such as thread-safety, per-instance default options, shared remote state in a database, alternative rate-limiting schemes, or improving runtime/memory performance. This is strictly optional.
 
-The class should be called `RateLimiter`, and it should have a single public method, `limit`. The initializer should accept a hash of options that include at least `throws`, and `limit` should take a `name`, `threshold`, and `period`. This is demonstrated below.
+The class should be called `RateLimiter`, and it should have a single public method, `limit`. The initializer should accept a hash of options that includes `throws`. The `limit` method should take a `name`, `threshold`, and `period`. This is demonstrated below.
 
 If `throws` is `true`, the block should raise a `RateLimiter::Limited` error when the number of calls exceeds the `threshold` for a given `period`. If `throws` is `false`, the block should simply not execute, instead of throwing an error.
 
