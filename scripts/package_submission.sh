@@ -14,6 +14,9 @@ else
   echo $id > "$ROOT/.id"
 fi
 
+author="$id <$id@coding-challenge.meetkaruna.com>"
+git config user.email $author
+
 file=$(tar_file $id)
 
 rm -f $file $file.enc
