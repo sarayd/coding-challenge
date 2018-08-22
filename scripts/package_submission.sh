@@ -14,8 +14,12 @@ else
   echo $id > "$ROOT/.id"
 fi
 
-author="$id <$id@coding-challenge.meetkaruna.com>"
-git config user.email $author
+git_name="Submission $(cut -d '-' -f1 <<< $id)"
+git_email="$id@coding-challenge.meetkaruna.com"
+git_author="$git_name <$git_email>"
+
+git config user.name $git_name
+git config user.email $git_email
 
 file=$(tar_file $id)
 

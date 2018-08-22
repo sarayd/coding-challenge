@@ -12,5 +12,5 @@ source "$ROOT/scripts/package_submission.sh"
 
 git checkout $id
 git add "$file.enc" "$ROOT/keys/$id.key.enc"
-git commit --author "Submission $author" -m "Amend submission $id"
+git commit --author "$git_author" -m "Amend submission $id"
 git push origin $id
