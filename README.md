@@ -2,9 +2,20 @@
 
 This challenge consists of many questions, each designed to test a different skillset which we consider crucial to being part of our early-stage team. Each question should take at most an hour. This is not meant to be a whiteboard exercise or something to test your memorization skills. We want to see how you problem-solve as an engineer. Feel free to use your standard environment, tools, resources, etc. You can Google anything you'd like, use public libraries, and do all thing things you'd normally do. We only request that your submission be self-contained (use standard mechanisms such as a `package.json` or `Gemfile` to pull in external dependencies if needed), and that you don't get anyone else to help you (no asking friends for tips and write all your own code).
 
-Please select 3 of the below challenges, and complete them.
+Please select 3 of the below challenges, and complete them. If you are applying for a frontend position, at least one of these *must* be a React question (_Messaging Client (Frontend)_ or _`Brainfuck` Execution Visualizer_).
+
+The React questions can take slightly longer than the others, so we recommend doing them first, and keep track of your time. If one of these ends up taking more than 90 minutes, we will count it as two questions (without penalty - we understand everyone works at different speeds, and are more concerned with your quality), so you only have to submit one other.
 
 Additionally, we will ask you to submit a code sample. This should be the piece of code that you are most proud of. You could be proud of this code because of how elegant, efficient, or otherwise beautiful it is.
+
+## Respecting Your Time
+
+We understand that asking you to take time out of your busy personal schedule to do our coding challenge is significant—we value your time! We've been on the other end of enough of these to know how it feels when your time is taken for granted, so we do a few things to mitigate that feeling.
+
+1. A hard time limit: unless you _want_ to, please do not spend more than 3.5 hours on this challenge. Let us know if you hit this limit—it probably means we messed up.
+2. Please give us feedback on how long each question takes you, and if any feel too short or too long.
+3. This coding challenge is a part of our on-site. We're not taking time away from you in addition to a full day in our office. Instead, we understand that most people would prefer to write code on their own time, in their own environment, instead of on a whiteboard in our office. Therefore, we give you the bulk of the technical interview in the form of this challenge, and simply spend time in the office going over your solutions. For some roles, we might ask you to do one more hour of work during your onsite. If you'd prefer to come sit in our office and do this challenge right before your onsite, let us know and we can make that happen!
+4. If you feel strongly that you must be compensated for your time spent on this, we understand. Please let us know, and we will gladly compensate you a fair (but startup-appropriate) amount.
 
 ## Environment
 
