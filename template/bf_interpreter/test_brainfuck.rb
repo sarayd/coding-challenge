@@ -11,7 +11,7 @@ class TestBrainfuck < Test::Unit::TestCase
 
   def test_hello_world
     script = "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++."
-    output = "Hello World\n"
+    output = "Hello World!\n"
     assert_script_output script, output
   end
 
