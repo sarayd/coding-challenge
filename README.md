@@ -230,7 +230,11 @@ end
 
 ### `Brainfuck` Execution Visualizer
 
-Given an API that executes Brainfuck instruction-by-instruction (see above), we want to build an execution environment visualizer.
+See the previous question for an overview of `Brainfuck`. You do not need any background context on compilers or the `Brainfuck` language to complete this challenge.
+
+We want to build an _execution visualizer_, which is a web app that executes a program step by step, and can show at any given time where we are in the program's execution (which line is being run currently), and what our memory currently looks like. An example of an execution visualizer can be found [here](https://goo.gl/nDth8B). We recommend you play with this example for a bit to get familiar with what we are trying to build.
+
+We will provide an API implementing a `Brainfuck` interpreter that will execute a program one step at a time, and return after each step a dump of the current memory.
 
 Build a functional, standalone React app that takes in a Brainfuck script (e.g. in a text field), shows the parsed script being executed, intelligently displays the parts of the data array which are not empty (including the string representations of the cell contents, if possible), and indicates where the instruction and data pointers are. There should be a visual indication (e.g. animation) when any of these change.
 
