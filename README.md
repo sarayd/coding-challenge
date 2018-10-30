@@ -236,7 +236,7 @@ We want to build an _execution visualizer_, which is a web app that executes a p
 
 We will provide an API implementing a `Brainfuck` interpreter that will execute a program one step at a time, and return after each step a dump of the current memory.
 
-Build a functional, standalone React app that takes in a Brainfuck script (e.g. in a text field), shows the parsed script being executed, intelligently displays the parts of the data array which are not empty (including the string representations of the cell contents, if possible), and indicates where the instruction and data pointers are. There should be a visual indication (e.g. animation) when any of these change.
+Build a functional, standalone React app that takes in a Brainfuck script (e.g. in a text field), shows the parsed script being executed, intelligently displays the parts of the data array which are not empty (including the string representations of the cell contents, if possible), and indicates where the instruction and data pointers are. There should be a visual indication (animations, colours, etc.) when any of these change.
 
 This assignment is intentionally open-ended; build whatever you think is appropriate to help someone understand the execution of a Brainfuck script.
 
