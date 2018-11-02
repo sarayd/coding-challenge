@@ -271,6 +271,8 @@ The response is a representation of the state of a Brainfuck execution environme
 
 This endpoint takes an optional `input` parameter: a string to be concatenated to the input buffer.
 
+This endpoint also takes an optional `count` parameter: the number of steps to take (defaults to 1).
+
 After processing any additional input, this endpoint steps the Brainfuck interpreter forward by one instruction, and returns the state. Any output thus far can be found in the state, as well as the current values for the instruction and data pointers.
 
 
