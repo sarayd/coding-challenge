@@ -8,3 +8,4 @@ keys/*.unencrypted
 
 submissions/*.unencrypted
 submissions/*.tar.gz
+submissions/*.tar.gz.legacy
