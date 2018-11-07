@@ -131,11 +131,21 @@ R := \{r \in U : r.\text{status} = \text{``pending''} \land (\nexists r' \in M_r
 
 We wish to build a client for the platform described in the [messaging architecture](docs/messaging_architecture.md) spec.
 
-Build a functional, standalone React app that displays a set of conversations, each with a series of messages between two parties. Assume the person viewing the app is one of the participants in each conversation (don't worry about supporting multiple users). The basic requirements are to be able to view the list of conversations with others, search for a given conversation by the other person's name (exact match is sufficient), view the messages of a selected conversation in-order, compose a new message (plain text is sufficient), and "send" a new message (storing the message in-memory and having it appear in the interface is sufficient).
+Build a functional, standalone **two page** React app that displays a set of conversations, each with a series of messages between two parties. Assume the person viewing the app is one of the participants in each conversation (don't worry about supporting multiple users). The basic requirements are: 
 
-While you are free to store outgoing messages in-memory, please use the below API endpoints to fetch the set of existing conversations and messages. Each conversation has an unread count, which you must display somewhere in the interface. Conversations should be displayed in descending order of their last message's timestamp.
+- Be able to view the list of conversations with others (page 1)
+   - Conversations are displayed in descending order of their last timestamp 
+   - Display a preview of each conversation (name, unread count, and last message time)
+   - Search for a given conversation by the other person's name 
+- View the messages of a selected conversation in-order (page 2)
+   - Incoming vs outgoing messages must be visually distinct
+   - Compose a new message (plain text is sufficient) and "send" a new message (storing the message in-memory and having it appear in the interface)
 
-If you have time, feel free to add creative extensions, such as fuzzy searching (of conversation names or message contents), rich-text composing, configurable options for message delivery, or anything else you can think of!
+While you are free to store outgoing messages in-memory, please use the below API endpoints to fetch the set of existing conversations and messages.
+
+If you have time, feel free to add creative extensions, such as fuzzy searching (of conversation names or message contents), rich-text composing, handling new realtime incoming messages, or anything else you can think of! 
+
+Remember to focus on code quality. If you don't have time to implement everything exactly as you want to, leave comments letting us know how you would have done it better!
 
 #### `GET /conversations`
 
@@ -279,3 +289,4 @@ After processing any additional input, this endpoint steps the Brainfuck interpr
 ### Code Sample
 
 Please include with it a brief description of what your code does, and why you're so proud of it.
+
