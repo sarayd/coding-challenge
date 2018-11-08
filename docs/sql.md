@@ -35,7 +35,7 @@ Write a single query ([CTE](https://www.postgresql.org/docs/9.1/static/queries-w
 
 If it helps, the formal definition of the set `R` of returned rows are as follows. Here, `U` is the set of all records in the database, and `M_r` is the set of records that have the same `medium` and `identifier` as a record `r`.
 
-![formal definition of R](images/sql.png)
+![formal definition of R](../images/sql.png)
 
 
 ```tex
