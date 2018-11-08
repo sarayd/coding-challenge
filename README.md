@@ -2,6 +2,8 @@
 
 This challenge consists of many questions, each designed to test a different skillset which we consider crucial to being part of our early-stage team. Skip ahead to [here](#questions) to get a preview of the questions.
 
+## General Information
+
 Each question should take at most an hour (with the exception of the React questions, see below). This is not meant to be a whiteboard exercise or something to test your memorization skills. We want to see how you problem-solve as an engineer. Feel free to use your standard environment, tools, resources, etc. You can Google anything you'd like, use public libraries, and do all thing things you'd normally do. We only request that your submission be self-contained (use standard mechanisms such as a `package.json` or `Gemfile` to pull in external dependencies if needed), and that you don't get anyone else to help you (no asking friends for tips and write all your own code). Remember to focus on code quality. If you don't have time to implement everything exactly as you want to, leave comments letting us know how you would have done it better!
 
 Please select 3 of the below challenges, and complete them. If you are applying for a frontend position, at least one of these *must* be a React question (_Messaging Client (Frontend)_ or _`Brainfuck` Execution Visualizer_).
