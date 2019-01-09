@@ -29,7 +29,7 @@ Some questions must be completed in Ruby (since this is the language the majorit
 
 The SQL question is run against an up-to-date Postgres instance.
 
-The React questions can use any sane build setup you wish (including a simple static HTML file). We recommend using a standard framework like [create-react-app](https://github.com/facebook/create-react-app) or [neutrino](https://neutrinojs.org/) (we like this one!). We will run your code in a modern version of Chrome, unless you tell us to do something else.
+The React questions can use any sane build setup you wish (including a simple static HTML file). We recommend using a standard framework like [create-react-app](https://github.com/facebook/create-react-app). We will run your code in a modern version of Chrome, unless you tell us to do something else.
 
 ## Submission
 
