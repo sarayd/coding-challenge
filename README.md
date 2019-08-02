@@ -8,9 +8,17 @@ Each question should take at most an hour (with the exception of the React quest
 
 Remember to focus on code quality. If you don't have time to implement everything exactly as you want to, leave comments letting us know how you would have done it better!
 
-Please select 3 of the below challenges, and complete them. If you are applying for a frontend position, at least one of these *must* be a React question (_Messaging Client (Frontend)_ or _`Brainfuck` Execution Visualizer_).
+### Backend/Fullstack Roles
 
-The React questions can take slightly longer than the others, so we recommend doing them first, and keeping track of your time. If one of these ends up taking more than 90 minutes, we will count it as two questions (without penalty - we are more concerned with your quality than your speed), so you only have to submit one other.
+Please select 3 of the below challenges, and complete them. For fullstack candidates, one of these *must* be a React question (_Messaging Client (Frontend)_ or _`Brainfuck` Execution Visualizer_).
+
+Additionally, we will ask you to submit a code sample. This should be the piece of code that you are most proud of. You could be proud of this code because of how elegant, efficient, or otherwise beautiful it is.
+
+### Frontend Roles
+
+Select either one of the React challenges (_Messaging Client (Frontend)_ or _`Brainfuck` Execution Visualizer_).
+
+The React questions will take slightly longer than the others, we only ask that you complete 1 challenge (insted of the 3 required for BE/fullstack roles).
 
 Additionally, we will ask you to submit a code sample. This should be the piece of code that you are most proud of. You could be proud of this code because of how elegant, efficient, or otherwise beautiful it is.
 
