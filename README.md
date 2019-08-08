@@ -8,19 +8,21 @@ Each question should take at most an hour (with the exception of the React quest
 
 Remember to focus on code quality. If you don't have time to implement everything exactly as you want to, leave comments letting us know how you would have done it better!
 
-### Backend/Fullstack Roles
-
-Please select 3 of the below challenges, and complete them. For fullstack candidates, one of these *must* be a React question (_Messaging Client (Frontend)_ or _`Brainfuck` Execution Visualizer_).
-
 Additionally, we will ask you to submit a code sample. This should be the piece of code that you are most proud of. You could be proud of this code because of how elegant, efficient, or otherwise beautiful it is.
+
+### Backend Roles
+
+Please select 3 of the below Ruby or SQL challenges, and complete them.
+
+### Fullstack Roles
+
+Please select 1 of the below Ruby or SQL challenges, and 1 of the React challenges, and complete them.
 
 ### Frontend Roles
 
-Select either one of the React challenges (_Messaging Client (Frontend)_ or _`Brainfuck` Execution Visualizer_).
+Select either one of the React challenges (_Messaging Client (Frontend)_ or _`Brainfuck` Execution Visualizer_), and compelte it.
 
-The React questions will take slightly longer than the others, we only ask that you complete 1 challenge (insted of the 3 required for BE/fullstack roles).
-
-Additionally, we will ask you to submit a code sample. This should be the piece of code that you are most proud of. You could be proud of this code because of how elegant, efficient, or otherwise beautiful it is.
+Since the React questions will take slightly longer than the others, we only ask that you complete one challenge.
 
 ## Respecting Your Time
 
