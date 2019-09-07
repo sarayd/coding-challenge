@@ -16,7 +16,7 @@ This assignment is intentionally open-ended; build whatever you think is appropr
 
 To help with this assignment, we provide an API which parses and executes a given script. Initially, you might want to avoid scripts that require input. If you have time, you can add support for providing input via the endpoint below.
 
-#### `POST /brainfuck`
+#### `POST https://sec.meetkaruna.com/api/v1/brainfuck`
 
 This endpoint takes one mandatory parameter, `script`, which is a string containing the Brainfuck script to be executed. It also takes an optional `input` parameter, which is used to buffer some input characters before execution begins.
 
@@ -41,7 +41,7 @@ The response is a representation of the state of a Brainfuck execution environme
 }
 ```
 
-#### `POST /brainfuck/<id>/step`
+#### `POST https://sec.meetkaruna.com/api/v1/brainfuck/<id>/step`
 
 This endpoint takes an optional `input` parameter: a string to be concatenated to the input buffer.
 
