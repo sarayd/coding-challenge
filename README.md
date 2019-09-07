@@ -20,7 +20,7 @@ Please select 1 of the below Ruby or SQL challenges, and 1 of the React challeng
 
 ### Frontend Roles
 
-Select either one of the React challenges ([_Messaging Client (Frontend)_](#messaging-client-frontend) or [_`Brainfuck` Execution Visualizer_](brainfuck-execution-visualizer-frontend)), and complete it.
+Select either one of the React challenges ([_Messaging Client (Frontend)_](#messaging-client-frontend) or [_`Brainfuck` Execution Visualizer_](#brainfuck-execution-visualizer-frontend)), and complete it.
 
 Since the React questions will take slightly longer than the others, we only ask that you complete one challenge.
 
