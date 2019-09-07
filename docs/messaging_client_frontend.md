@@ -18,7 +18,7 @@ While you are free to store outgoing messages in-memory, please use the below AP
 
 If you have time, feel free to add creative extensions, such as fuzzy searching (of conversation names or message contents), persisting new outoging messages, rich-text composing, handling new realtime incoming messages, or anything else you can think of!
 
-#### `GET /conversations`
+#### `GET https://sec.meetkaruna.com/api/v1/conversations`
 
 This endpoint returns a list of conversations, which include the name of the other party, and an ID. You can use this ID to fetch the messages of a given conversation, as below.
 
@@ -44,7 +44,7 @@ This endpoint returns a list of conversations, which include the name of the oth
 }
 ```
 
-#### `GET /conversations/<uuid>`
+#### `GET https://sec.meetkaruna.com/api/v1/conversations/<uuid>`
 
 This endpoint lists the messages of a given conversation. Each message has a timestamp, an ID, a body, and a direction (`outgoing|incoming`).
 
