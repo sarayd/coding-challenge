@@ -20,7 +20,7 @@ Please select 1 of the below Ruby or SQL challenges, and 1 of the React challeng
 
 ### Frontend Roles
 
-Select either one of the React challenges ([_Messaging Client (Frontend)_](#messaging-client-frontend) or [_`Brainfuck` Execution Visualizer_](#brainfuck-execution-visualizer-frontend)), and complete it.
+Select either one of the React challenges ([_Messaging Client (Frontend)_](#messaging-client-frontend) or [_`Brainf***` Execution Visualizer_](#brainf-execution-visualizer-frontend), and complete it.
 
 Since the React questions will take slightly longer than the others, we only ask that you complete one challenge.
 
@@ -89,15 +89,15 @@ What is the most creative way you can get a circle to appear on the screen of a 
 
 **Read more [here](docs/creative_web.md).**
 
-### `Brainfuck` Interpreter
+### Brainf*** Interpreter
 
-Implement a `Brainfuck` interpreter (as a Ruby class), which takes in a script and executes it.
+Implement a `Brainf***` interpreter (as a Ruby class), which takes in a script and executes it.
 
 **Read more [here](docs/brainfuck_interpreter.md).**
 
-### `Brainfuck` Execution Visualizer (Frontend)
+### Brainf*** Execution Visualizer (Frontend)
 
-You do not need any background context on compilers or the `Brainfuck` language to complete this challenge.
+You do not need any background context on compilers or the `Brainf***` language to complete this challenge.
 
 We want to build an _execution visualizer_, which is a web app that executes a program step by step, and can show at any given time where we are in the program's execution. An example of an execution visualizer can be found [here](https://goo.gl/nDth8B).
 
