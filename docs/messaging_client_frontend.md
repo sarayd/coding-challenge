@@ -4,6 +4,7 @@ We wish to build a client for the platform described in the [messaging architect
 
 Build a functional, standalone React app that displays a set of conversations, each with a series of messages between two parties. Assume the person viewing the app is one of the participants in each conversation (don't worry about supporting multiple users). The basic requirements are:
 
+- Please use type-checking in your submission. We recommend [Flow](https://flow.org) or [Typescript](https://www.typescriptlang.org/).
 - Be able to view the list of conversations with others
    - Conversations are displayed in descending order of their last timestamp
    - Display a preview of each conversation (name, unread count, and last message time)
