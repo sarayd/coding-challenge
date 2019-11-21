@@ -101,7 +101,7 @@ Implement a `Brainf***` interpreter (as a Ruby class), which takes in a script a
 
 You do not need any background context on compilers or the `Brainf***` language to complete this challenge.
 
-We want to build an _execution visualizer_, which is a web app that executes a program step by step, and can show at any given time where we are in the program's execution. An example of an execution visualizer can be found [here](https://goo.gl/nDth8B).
+We want to build an _execution visualizer_, which is a web app that executes a program step by step, and can show at any given time where we are in the program's execution. An example of an execution visualizer can be found [here](https://karuna-health.github.io/bf-visualizer/).
 
 **Read more [here](docs/brainfuck_execution_visualizer.md).**
 
