@@ -61,52 +61,36 @@ This coding challenge is very much in beta! Feel free to email us with improveme
 
 We have provided a summary of each question below. There is a document linked for each which describes the requirements in detail.
 
-### Rate Limiting
+### [Rate Limiting](docs/rate_limiting.md)
 
 Design a class that allows for rate-limiting of arbitrary code blocks.
 
-**Read more [here](docs/rate_limiting.md).**
-
-### SQL
+### [SQL](docs/sql.md)
 
 We are attempting to build a service which receives messages to be sent, and queues them locally so that they can be delivered to the recipient one at a time. Write a query that gives us the messages which are eligible to be sent at the given moment.
 
-**Read more [here](docs/sql.md).**
-
-### Messaging Client (Frontend)
+### [Messaging Client (Frontend)](docs/messaging_client_frontend.md)
 
 We wish to build a client for the platform described in the [messaging architecture](docs/messaging_architecture.md) spec. Build a functional, standalone React app that displays a set of conversations, each with a series of messages between two parties.
 
-**Read more [here](docs/messaging_client_frontend.md).**
-
-### Messaging Client (Design)
+### [Messaging Client (Design)](docs/messaging_client_design.md)
 
 We wish to design an interface for the platform described in the [messaging architecture](docs/messaging_architecture.md) spec.
 
-**Read more [here](docs/messaging_client_design.md).**
-
-### Creative Web
+### [Creative Web](docs/creative_web.md)
 
 What is the most creative way you can get a circle to appear on the screen of a web browser?
 
-**Read more [here](docs/creative_web.md).**
-
-### Brainf*** Interpreter
+### [Brainf*** Interpreter](docs/brainfuck_interpreter.md)
 
 Implement a `Brainf***` interpreter (as a Ruby class), which takes in a script and executes it.
 
-**Read more [here](docs/brainfuck_interpreter.md).**
-
-### Brainf*** Execution Visualizer (Frontend)
+### [Brainf*** Execution Visualizer (Frontend)](docs/brainfuck_execution_visualizer.md)
 
 You do not need any background context on compilers or the `Brainf***` language to complete this challenge.
 
 We want to build an _execution visualizer_, which is a web app that executes a program step by step, and can show at any given time where we are in the program's execution. An example of an execution visualizer can be found [here](https://karuna-health.github.io/bf-visualizer/).
 
-**Read more [here](docs/brainfuck_execution_visualizer.md).**
-
 ### Code Sample
 
 Please include with it a brief description of what your code does, and why you're so proud of it.
-
-
